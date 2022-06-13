@@ -34,7 +34,7 @@ Vector::Vector(const int* ptr, int size)
 // Конструктор копирования
 Vector::Vector(const Vector& v)
 {
-
+	// Доделать
 }
 
 // Деструктор
@@ -85,9 +85,16 @@ void Vector::Add(const int& item)
 {
 	int* p = new int[++m_size];
 	if (m_vect != nullptr)
+	{
+
 		for (int i = 0; i < m_size - 1; i++)
 			p[i] = m_vect[i];
-	p[m_size - 1] = item;
+		p[m_size - 1] = item;
+	}
+	else
+	{
+		*p = item;
+	}
 	delete[]m_vect;
 	m_vect = p;
 	p = nullptr;
