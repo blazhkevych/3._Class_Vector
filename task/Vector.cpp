@@ -34,7 +34,11 @@ Vector::Vector(const int* ptr, int size)
 // Конструктор копирования
 Vector::Vector(const Vector& v)
 {
-	// Доделать
+	int size = v.GetSize();
+	m_vect = new int[size];
+	for (int i = 0; i < size; i++)
+		m_vect[i] = v.m_vect[i];
+	m_size = v.GetSize();
 }
 
 // Деструктор
@@ -47,6 +51,12 @@ Vector::~Vector()
 int Vector::GetSize() const
 {
 	return m_size;
+}
+
+// Функция возвращает адрес вектора
+int* Vector::GetVect() const
+{
+	return m_vect;
 }
 
 // Вывод на экран

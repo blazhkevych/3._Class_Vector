@@ -4,8 +4,6 @@
 	ИЗВЕСТНЫЕ ОШИБКИ:
 
 	ДОДЕЛАТЬ:
-	// Конструктор копирования
-	Vector::Vector(const Vector& v)
 
 	ВИДЕО: 2:43:52
 */
@@ -29,6 +27,7 @@ int main()
 	Vector v1;
 	Vector v2{ 3 };
 	Vector v3{ arr, size };
+
 
 	cout << "\nv1 size is " << v1.GetSize() << endl;
 	cout << "\nv2 size is " << v2.GetSize() << endl;
@@ -114,6 +113,29 @@ int main()
 	cout << "\nv3 After removing an element from a vector at a 3 index :" << endl;
 	v3.Print();
 	cout << "\nv3 size is " << v3.GetSize() << endl;
+
+	Vector v4 = v3;
+
+	cout << "\nv3 and v4 After Vector v4 = v3 :" << endl;
+	cout << "v3 addresses :" << &v3 << '\t' << v3.GetVect() << endl;
+	cout << "v4 addresses :" << &v4 << '\t' << v4.GetVect() << endl;
+
+	cout << "\nv3 :";
+	cout << "\nv3 size is " << v3.GetSize() << endl;
+	v3.Print();
+	cout << endl;
+
+	cout << "v4 :";
+	cout << "\nv4 size is " << v4.GetSize() << endl;
+	v4.Print();
+	cout << endl;
+	cout << endl;
+
+	cout << "arr address :" << &arr << endl;
+	cout << "v1 addresses :" << &v1 << '\t' << v1.GetVect() << endl;
+	cout << "v2 addresses :" << &v2 << '\t' << v2.GetVect() << endl;
+	cout << "v3 addresses :" << &v3 << '\t' << v3.GetVect() << endl;
+	cout << "v4 addresses :" << &v4 << '\t' << v4.GetVect() << endl;
 
 	delete[]arr;
 }
